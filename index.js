@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const dotenv = require("dotenv");
+const path = require("path");
 const app = express();
 
 dotenv.config();
@@ -22,8 +23,10 @@ mongoose.connect(
     }
 );
 
+app.use(express.static(__dirname + "/client/dist/client"));
+
 app.get("/", (req, res) => {
-    res.send("hi");
+    res.sendFile(path.join(__dirname + "/client/dist/client/index.html"));
 });
 
 app.listen(PORT, () => {
