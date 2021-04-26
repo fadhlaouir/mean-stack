@@ -1,1 +1,20 @@
-<p>navbar works!</p>
+<div class="d-flex h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">
+                    <a class="nav-link active text-white " [routerLink]="[ '/' ]" routerLinkActive="active">Home</a>
+                </h3>
+                <nav class="nav nav-masthead justify-content-center float-end">
+
+                    <a class="nav-link active text-white " [routerLink]="[ '/dashboard' ]" routerLinkActive="active">Dashboard</a>
+                    <a class="nav-link active text-white " [routerLink]="[ '/dashboard' ]" routerLinkActive="active">Profile</a>
+                    <a class="nav-link active text-white " [routerLink]="[ '/dashboard' ]" routerLinkActive="active">Blog</a>
+                    <a class="nav-link active text-white " [routerLink]="[ '/dashboard' ]" routerLinkActive="active">Login</a>
+                    <a class="nav-link active text-white " [routerLink]="[ '/dashboard' ]" routerLinkActive="active">Logout</a>
+                    <a class="nav-link active text-white " [routerLink]="[ '/dashboard' ]" routerLinkActive="active">Register</a>
+                </nav>
+            </div>
+        </header>
+    </div>
+</div>
