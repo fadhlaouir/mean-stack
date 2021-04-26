@@ -3,8 +3,8 @@ const jwt = require("jsonwebtoken"); // Compact, URL-safe means of representing 
 
 module.exports = (router) => {
     /* ==============
-             Register Route
-          ============== */
+                   Register Route
+                ============== */
     router.post("/register", (req, res) => {
         // Check if email was provided
         if (!req.body.email) {
@@ -80,8 +80,8 @@ module.exports = (router) => {
     });
 
     /* ============================================================
-             Route to check if user's email is available for registration
-          ============================================================ */
+                   Route to check if user's email is available for registration
+                ============================================================ */
     router.get("/checkEmail/:email", (req, res) => {
         // Check if email was provided in paramaters
         if (!req.params.email) {
@@ -104,8 +104,8 @@ module.exports = (router) => {
     });
 
     /* ===============================================================
-             Route to check if user's username is available for registration
-          =============================================================== */
+                   Route to check if user's username is available for registration
+                =============================================================== */
     router.get("/checkUsername/:username", (req, res) => {
         // Check if username was provided in paramaters
         if (!req.params.username) {
@@ -129,8 +129,8 @@ module.exports = (router) => {
     });
 
     /* ========
-          LOGIN ROUTE
-          ======== */
+                LOGIN ROUTE
+                ======== */
     router.post("/login", (req, res) => {
         // Check if username was provided
         if (!req.body.username) {
@@ -177,8 +177,8 @@ module.exports = (router) => {
     });
 
     /* ================================================
-          MIDDLEWARE - Used to grab user's token from headers
-          ================================================ */
+                MIDDLEWARE - Used to grab user's token from headers
+                ================================================ */
     router.use((req, res, next) => {
         const token = req.headers["authorization"]; // Create token found in headers
         // Check if token was found in headers
@@ -199,8 +199,8 @@ module.exports = (router) => {
     });
 
     /* ===============================================================
-             Route to get user's profile data
-          =============================================================== */
+                   Route to get user's profile data
+                =============================================================== */
     router.get("/profile", (req, res) => {
         // Search for user in database
         User.findOne({ _id: req.decoded.userId })
@@ -221,8 +221,8 @@ module.exports = (router) => {
     });
 
     /* ===============================================================
-             Route to get user's public profile data
-          =============================================================== */
+                   Route to get user's public profile data
+                =============================================================== */
     router.get("/publicProfile/:username", (req, res) => {
         // Check if username was passed in the parameters
         if (!req.params.username) {
